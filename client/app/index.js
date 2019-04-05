@@ -1,30 +1,19 @@
-import React from 'react';
-import { render } from 'react-dom';
+/* eslint-disable no-unused-expressions */
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch
-} from 'react-router-dom'
+import App from "./screens/Home/index";
 
-import App from './components/App/App';
-import NotFound from './components/App/NotFound';
+import store from "./store";
 
-import Home from './components/Home/Home';
+const wrapper = document.getElementById("root");
 
-import HelloWorld from './components/HelloWorld/HelloWorld';
-
-import './styles/styles.scss';
-
-render((
-  <Router>
-    <App>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/helloworld" component={HelloWorld}/>
-        <Route component={NotFound}/>
-      </Switch>
-    </App>
-  </Router>
-), document.getElementById('app'));
+wrapper
+  ? ReactDOM.render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+      wrapper
+    )
+  : false;

@@ -1,0 +1,46 @@
+.dataContainer {
+  //width: 124px;
+  //height: 124px;
+  //border: 1px solid lightgrey;
+  //padding: 10px;
+  //float: right;
+  //margin-right: 39px;
+  //text-align: left;
+  //font-size: 0.8em;
+
+  width: 114px;
+  height: 118px;
+  border: 1px solid lightgrey;
+  padding: 14px 14px;
+  float: right;
+  margin-right: 39px;
+  text-align: left;
+  font-size: 0.79em;
+  background-color: whitesmoke;
+}
+
+.title {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.account {
+  width: 170px;
+  word-wrap: break-word;
+  display: flow-root;
+}
+
+.text {
+  font-weight: bold;
+}
+
+.success {
+  @extend .text;
+  color: green;
+}
+
+.failure {
+  color: red;
+}

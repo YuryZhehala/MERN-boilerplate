@@ -1,0 +1,49 @@
+.modal {
+  width: 400px;
+  min-height: 135px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  margin: 2px 2px 2px 190px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.button {
+  display: none;
+  width: 170px;
+  margin: 0 -48px 0 0;
+  background-color: orange;
+  color: whitesmoke;
+  border-radius: 25px;
+  border: 1px solid lightgray;
+  font-weight: bold;
+  font-size: 0.85em;
+  padding: 5px 0px;
+  &:hover {
+    background-color: darkorange;
+  }
+}
+
+.grid {
+  float: left;
+  margin-right: -17px;
+}
+
+.qrcode {
+  float: left;
+}
+
+.hide{
+  display: none;
+}
+
+.loader {
+  margin-top: -1px;
+  margin-left: 36px;
+  display: none;
+  &.show {
+    display: block;
+  }
+}

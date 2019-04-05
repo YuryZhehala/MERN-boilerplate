@@ -1,0 +1,24 @@
+.default {
+  color: grey;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 20px;
+  margin-right: 14px;
+  text-align: right;
+}
+
+.waiting {
+  @extend .default;
+  color: darkorange;
+}
+
+.success {
+  @extend .default;
+  margin-top: 20px;
+  color: green;
+}
+
+.failure {
+  @extend .default;
+  color: red;
+}

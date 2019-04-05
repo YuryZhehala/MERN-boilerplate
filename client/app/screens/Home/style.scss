@@ -1,0 +1,61 @@
+@import '../../styles/breakpoints';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  background-color: #f7f7f7;
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: 640px;
+  height: 240px;
+}
+
+.title {
+  width: 100%;
+  border-bottom: 0.5px solid lightgray;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.smallText{
+  font-size: 0.8em;
+  font-weight: lighter;
+  color: grey;
+  font-style: italic;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.95em;
+  font-weight: bold;
+}
+
+@include breakpoint(xs) {
+  .main {
+    width: 100vw;
+  }
+  .smallText{
+    font-size: 1em;
+  }
+  .label {
+    font-size: 1em;
+  }
+}
+
+@include breakpoint(md) {
+  .main {
+    width: 70vw;
+  }
+  .smallText{
+    font-size: 1em;
+  }
+  .label {
+    font-size: 1em;
+  }
+}
+

@@ -1,0 +1,22 @@
+.closeButton{
+  width: 30px;
+  height: 30px;
+  background-color: orange;
+  color: whitesmoke;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  background-image: url("../../static/images/close.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:hover {
+    background-color: darkorange;
+  }
+  &:focus {
+    outline: none;
+  }
+}

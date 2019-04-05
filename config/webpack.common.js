@@ -10,11 +10,7 @@ const NODE_ENV = process.env.NODE_ENV;
 const isProd = NODE_ENV === 'production';
 
 module.exports = {
-  entry: {
-    'app': [
-      helpers.root('client/app/index.js')
-    ]
-  },
+  entry: './client/app/index.js',
 
   output: {
     path: helpers.root('dist'),
@@ -32,9 +28,12 @@ module.exports = {
     rules: [
       // JS files
       {
-        test: /\.jsx?$/,
-        include: helpers.root('client'),
-        loader: 'babel-loader'
+        test: /\.(js|jsx)$/,
+        include: helpers.root(['client', './node_modules/react-loader-spinner/dist/loader/css/Plane.css']),
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        },
       },
 
       // SCSS files
@@ -61,9 +60,34 @@ module.exports = {
             'sass-loader'
           ]
         })
+      },
+      {
+        test: /\.(woff|woff2|otf|ttf|eot|png|jpg)$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'assets/',
+        },
+      },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        loader: 'svg-react-loader',
+        query: {
+          classIdPrefix: '[name]-[hash:8]__',
+          xmlnsTest: /^xmlns.*$/,
+        },
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader"
+          }
+        ]
       }
     ]
   },
+
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

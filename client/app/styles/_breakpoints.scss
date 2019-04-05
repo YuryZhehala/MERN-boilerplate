@@ -1,0 +1,43 @@
+$xs: 320px;
+$md: 700px;
+$lg: 1000px;
+$xl: 1200px;
+$xxl: 1500px;
+
+@mixin breakpoint($class) {
+  @if $class==xs {
+    @media (min-width: $xs) and (max-width: $md - 1) {
+      @content;
+    }
+  }
+
+  @if $class==md {
+    @media (min-width: $md) and (max-width: $lg - 1) {
+      @content;
+    }
+  }
+
+  @if $class==lg {
+    @media (min-width: $lg) and (max-width: $xl - 1) {
+      @content;
+    }
+  }
+
+  @if $class==xl {
+    @media (min-width: $xl) and (max-width: $xxl - 1) {
+      @content;
+    }
+  }
+
+  @if $class==xxl {
+    @media (min-width: $xxl) {
+      @content;
+    }
+  }
+
+  @if $class==desktop {
+    @media (min-width: 1000px) {
+      @content;
+    }
+  }
+}
